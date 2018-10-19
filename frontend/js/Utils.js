@@ -26,5 +26,5 @@ export async function waitUntilAPIAlive(): Promise<void> {
 }
 
 export const getAPI = () => sleep(PING_INTERVAL_MS)
-   .then(sendPeng)
+   .then(sendPing)
    .then(({ status }) => status === 'success' ? require('./API') : getAPI())
